@@ -13,8 +13,30 @@
     <div id="app"></div>
     <script type="text/babel">
 
+    const Compras = () => {
+
+        //useState é um Hook que define uma varíável reativa
+        const [contador, setContador] = React.useState(0);
+        console.log(contador);
+        function comprar () {
+            setContador(contador+1)
+        }
+        return (
+            <div>
+                <button onClick={comprar}>Comprar</button>
+                <p>Total: {contador}</p>
+                <p>Preço: R$ {contador * 100}</p>
+            </div>
+            )
+    }
+
     const Button= () => {
-        return <button>Comprar</button>
+
+        function handleClick(event){
+            console.log(event.target.innerText);
+        }
+
+        return <button onClick={handleClick}>Comprar</button>
     }
 
     const Titulo = () => {
@@ -24,6 +46,7 @@
 
     const App = () => {
         return <div>Meu App
+                <Compras/>
                 <Titulo/>
                 <Button/>
                 <div>Compre aqui também
