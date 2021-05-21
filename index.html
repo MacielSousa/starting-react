@@ -13,25 +13,26 @@
     <div id="app"></div>
     <script type="text/babel">
 
-    //Criando Componente 1
-    const App = () => {
-        return <div>Meu App</div>
-    }
-
-    //Criando Componenete 2
     const Button= () => {
         return <button>Comprar</button>
     }
 
-    //Criando Componente 2, Obs: componente criando com classe
-    //Quase não se utiliza esse tipo de declaração de componente
-    /*class Button extends React.Component {
-        render(){
-            return <button>Comprar</button>
-        }
-    }*/
+    const Titulo = () => {
+        const numAleatorio = Math.random() * 100;
+       return <h1>Meu Titulo {numAleatorio}</h1>
+    }
 
-      ReactDOM.render(<Button/>, document.getElementById('app'))
+    const App = () => {
+        return <div>Meu App
+                <Titulo/>
+                <Button/>
+                <div>Compre aqui também
+                    <Button/>
+                </div>
+            </div>
+    }
+
+      ReactDOM.render(<App/>, document.getElementById('app'))
     </script>
 </body>
 </html>
