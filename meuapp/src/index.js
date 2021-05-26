@@ -4,11 +4,12 @@ import App from './App';
 import Persona from './Persona';
 import Array from './Array'
 import Produtos from './Produtos'
+import Eventos from './Eventos'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Produtos />
+    <Eventos />
   </React.StrictMode>,
   document.getElementById('root')
 );
