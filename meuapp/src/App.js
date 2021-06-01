@@ -1,29 +1,26 @@
 import React, {Component} from 'react'
-import LinkComponente from './DesafioComponente/LinkComponente'
-import ListProdutos from './DesafioComponente/ListProdutos'
 
 const App = () => {
+    const [ativo, setAtivo] = React.useState(false);
+    const [dados, setDados] = React.useState({nome: 'João', idade: 60})
 
-    return <>
-        <LinkComponente nome="Home" link='http://localhost:3000/' estilo = 'listStyleType: "square"'  />
-        <LinkComponente nome="Produto" link='http://localhost:3000/produtos' estilo = 'listStyleType: "square"'/>
-        { 
-                window.location.href == 'http://localhost:3000/' 
-                ?
-                <>
-                <h3 style={{color: "green"}}>Home</h3>
-                <p>Essa é a home do Site</p>
-                </>
-                : 
-                <>
-                <h3 style={{color: "green"}}>Produtos</h3>
-                {
-                    <ListProdutos />
-                }
-                </>
-        }
-    </>
+    
+    function handleClick(){
+        setAtivo(!ativo);
+        setDados({...dados, faculdade: 'Possui Faculdade'});
+    }
 
-}
+   
+    return (
+        <div>
+            <p>{dados.nome}</p>
+            <p>{dados.idade}</p>
+            <p>{dados.faculdade}</p>
+            <button onClick={handleClick} >{ativo ? 'Ativo' : 'Inativo'}</button>
+        </div>
+    );
+    
+
+};
 
 export default App;
