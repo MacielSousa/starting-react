@@ -2,9 +2,6 @@ import React from 'react';
 
 
 const ShowProduto = ({produto, arrayProdutos, carregando}) =>{
-
-    console.log((arrayProdutos))
-    //console.log((arrayProdutos.fotos.map(foto => console.log(foto))))
     return <>
     {
        ['tablet', 'smartphone', 'notebook'].indexOf(produto.valueOf()) > -1 && (arrayProdutos != null) && (!carregando)

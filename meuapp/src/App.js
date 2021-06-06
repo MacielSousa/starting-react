@@ -1,28 +1,20 @@
 import React from 'react';
-import Button from './Hooks/DesafioHooks/Button';
-import ShowProduto from './Hooks/DesafioHooks/ShowProduto';
-
 
 const App = () => {
 
-    const [produto, setProduto] = React.useState('produto')
-    const [arrayProdutos, setArrayProdutos] = React.useState(null);
-    const [carregando, setCarregando] = React.useState(null);
+    const [contar, setContar] = React.useState(0);
 
-
-
-    return (
-        <div>
-           <Button nomeProduto='tablet' setProduto={setProduto}  setArrayProdutos={setArrayProdutos} setCarregando={setCarregando}/>
-           <Button nomeProduto='smartphone' setProduto={setProduto} setArrayProdutos={setArrayProdutos} setCarregando={setCarregando}/>
-           <Button nomeProduto='notebook' setProduto={setProduto} setArrayProdutos={setArrayProdutos} setCarregando={setCarregando}/>
-           <ShowProduto produto={produto} arrayProdutos={arrayProdutos} carregando={carregando}/>
-        </div>
-        
-
-    );
+    React.useEffect(() => {
+        console.log('Executou');
+    }, [])
+    const titulo = 'Total';
     
+    React.useEffect(() => {
+        document.title = titulo + contar;
+    }, [contar])
 
+    return <button onClick={() => setContar(contar + 1)}>{contar}</button>
+    
 };
 
 export default App;
