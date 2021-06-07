@@ -1,14 +1,25 @@
 import React from 'react';
-import Produto from './Hooks/ExercicioProduto/Produto';
+import Produtos from './Hooks/DesafioHookEffect/Produtos';
 
 const App = () => {
 
-    const [ativo, setAtivo] = React.useState(false);
+    const [dados, setDados] = React.useState(null);
+    console.log(window.localStorage.getItem('produto').toLowerCase());
 
+    
+    
     return (
         <div>
-            {ativo && <Produto />}
-            <button onClick={() => setAtivo(!ativo)}>Ativo</button>
+            <h1>Preferencia: {dados &&(<span>{dados.nome}</span>)}</h1>
+            <Produtos nome='notebook' setDados={setDados} dados={dados}/>
+            <Produtos nome='tablet' setDados={setDados} dados={dados}/>
+            {dados && (
+                <div>
+                    {window.localStorage.setItem('produto', dados.nome)}
+                    <p>{dados.nome}</p>
+                    <p>{dados.preco}</p>
+                </div>
+            )}
         </div>
     );
     
