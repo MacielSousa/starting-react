@@ -1,24 +1,21 @@
 import React from 'react';
 
-const Produtos = ({nome, setDados, dados}) => {
+const Produtos = ({produto}) => {
 
+    const [dados, setDados] = React.useState(null);
     React.useEffect(() => {
-        
-      function handleClick(event){
-         fetch(`https://ranekapi.origamid.dev/json/api/produto/${event.target.innerText}`)
+        if(produto !== null) {
+            fetch(`https://ranekapi.origamid.dev/json/api/produto/${produto}`)
             .then((resp) => resp.json())
             .then((json) => setDados(json))
         }
-        window.addEventListener('click', handleClick)
-        return  () => {
-            window.removeEventListener('click', handleClick)
-        }
-    }, [])
+    },[produto])
 
-    
+    if (dados === null) return null;
     return (
         <>
-            <button style={{margin: '5px'}}>{nome}</button>
+        <h1>{dados.nome}</h1>
+        <p>R$ {dados.preco}</p>
         </>
     )
 }
