@@ -1,11 +1,12 @@
 import React from 'react';
-import UseRef from './Hooks/Hooks useRef/UseRef';
+import Carrinho from './Hooks/Hooks useRef/Carrinho';
+
 
 const App = () => {
 
     return (
         <div>
-            <UseRef />
+         <Carrinho />
         </div>
     );
     
