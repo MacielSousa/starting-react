@@ -1,11 +1,12 @@
 import React from 'react';
-import UseContext from './Hooks/Hooks useContext/UseContext';
-import Produto from './Hooks/Hooks useContext/Produto'
+import Produto from './Hooks/Hooks useContext/Produto';
+import { GlobalStorage } from './Hooks/Hooks useContext/GlobalContext';
+
 const App = () => {
     return (
-        <UseContext.Provider value={{nome: 'Maciel'}}>
-            <Produto />
-        </UseContext.Provider>
+           <GlobalStorage>
+                <Produto />
+           </GlobalStorage>
     );
     
 };
