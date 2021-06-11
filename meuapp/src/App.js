@@ -1,16 +1,11 @@
 import React from 'react';
-import ExemploUm from './Hooks/HooksuseMemouseCallback/ExemploUm';
-
-
-
+import UseContext from './Hooks/Hooks useContext/UseContext';
+import Produto from './Hooks/Hooks useContext/Produto'
 const App = () => {
-
-    
-
     return (
-        <div>
-         <ExemploUm />
-        </div>
+        <UseContext.Provider value={{nome: 'Maciel'}}>
+            <Produto />
+        </UseContext.Provider>
     );
     
 };
