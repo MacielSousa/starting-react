@@ -2,7 +2,7 @@ import React from 'react';
 
 const Produtos = ({produto}) => {
 
-    const [dados, setDados] = React.useState(null);
+    const [dados, setDados] = React.useState(false);
     React.useEffect(() => {
         if(produto !== null) {
             fetch(`https://ranekapi.origamid.dev/json/api/produto/${produto}`)

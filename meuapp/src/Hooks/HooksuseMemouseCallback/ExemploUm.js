@@ -27,7 +27,7 @@ const Produto = () => {
 };
 
 const ExemploUm  = () => {
-    const [contar, setContar] = React.useState(0);
+    const [contar, setContar] = React.useState({});
 
     return (
         <div>
