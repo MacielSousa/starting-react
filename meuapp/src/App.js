@@ -1,10 +1,10 @@
 import React from 'react';
-import Formulario from './Formulario/Input/Formulario';
+import FormularioDois from './Formulario/Input/FormularioDois';
 
 const App = () => {
 
         return <div>
-            <Formulario />
+            <FormularioDois />
         </div>
     
 };
