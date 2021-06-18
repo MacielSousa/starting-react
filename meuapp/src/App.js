@@ -1,10 +1,10 @@
 import React from 'react';
 //import DesafioForm from './Formulario/Desafio/DesafioForm';
-import Textoarea from './Formulario/Areatexto/Textoarea';
+import Select from './Formulario/Selecionar/Select';
 const App = () => {
 
         return <div>
-           <Textoarea />
+           <Select />
          </div>
 }
 
