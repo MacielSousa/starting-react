@@ -86,7 +86,9 @@ const DesafioForm = () => {
                 <label htmlFor={id}>{label}</label>
                 <input  id={id} type={type}  value={form[id]}  onChange={handleChange} />
             </div>
+            
         ))}
+        
         {response && response.ok && <p>Formulário Enviado!</p>}
         <button>Enviar</button>
      </form>
