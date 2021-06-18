@@ -1,10 +1,10 @@
 import React from 'react';
-//import DesafioForm from './Formulario/Desafio/DesafioForm';
-import Select from './Formulario/Selecionar/Select';
+import Radio from './Formulario/RadioButton/Radio'
+
 const App = () => {
 
         return <div>
-           <Select />
+            <Radio />
          </div>
 }
 
