@@ -1,12 +1,11 @@
 import React from 'react';
-import FormularioDois from './Formulario/Input/FormularioDois';
+import DesafioForm from './Formulario/Desafio/DesafioForm';
 
 const App = () => {
 
         return <div>
-            <FormularioDois />
-        </div>
-    
-};
+            <DesafioForm />
+         </div>
+}
 
 export default App;
