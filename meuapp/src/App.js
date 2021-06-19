@@ -1,10 +1,10 @@
 import React from 'react';
-import Radio from './Formulario/RadioButton/Radio'
+import FormCheckbox1 from './Formulario/FormCheckbox/FormCheckbox1'
 
 const App = () => {
 
         return <div>
-            <Radio />
+            <FormCheckbox1 />
          </div>
 }
 
