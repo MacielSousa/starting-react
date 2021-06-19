@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import Input from './Formulario/FormComponentes/Input'
+import Radio from './Formulario/FormComponentes/Radio'
 
 const App = () => {
 
-    const [nome, setNome] = useState();
-    const [email, setEmail] = useState();
+    const [cor, setCor] = useState('Vermelho');
+    const [fruta, setFruta] = useState('Manga');
 
         return(
             <form>
-                <Input id="nome" label="Nome" value={nome} setValue={setNome} required />
-                <Input id="email" label="Email" value={email} setValue={setEmail}/>
-                <button>Enviar</button>
+                <h3>Cores</h3>
+                <Radio options = {["Azul", "Vermelho", "Verde", "Rosa"]} value={cor} setValue={setCor}/>
+                <h3>Frutas</h3>
+                <Radio options = {["Laranja", "Maçã", "Manga", "Jabuticaba"]} value={fruta} setValue={setFruta}/>
             </form>
          );
 }
