@@ -1,10 +1,10 @@
 import React from 'react';
-import FormCheckbox1 from './Formulario/FormCheckbox/FormCheckbox1'
+import DesafioCheckbox from './Formulario/FormCheckbox/DesafioCheckbox'
 
 const App = () => {
 
         return <div>
-            <FormCheckbox1 />
+            <DesafioCheckbox />
          </div>
 }
 
