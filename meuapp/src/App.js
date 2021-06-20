@@ -1,8 +1,12 @@
 import React from 'react';
-import ValidationEx01 from './Formulario/Validation/ValidationEx01'
+import AppForm from './Hooks/HooksFormValidation/AppForm';
 
 const App = () => {
-        return <ValidationEx01 />
+    return (
+        <>
+            <AppForm />
+        </>
+    )
 }
 
 export default App;
