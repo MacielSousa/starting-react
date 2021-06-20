@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import Radio from './Formulario/FormComponentes/Radio'
+import Checkbox from './Formulario/FormComponentes/Checkbox'
 
 const App = () => {
 
-    const [cor, setCor] = useState('Vermelho');
-    const [fruta, setFruta] = useState('Manga');
-
+    const [ingre, setIngre] = useState(['Sal Grosso', 'Vinagrete']);
         return(
             <form>
-                <h3>Cores</h3>
-                <Radio options = {["Azul", "Vermelho", "Verde", "Rosa"]} value={cor} setValue={setCor}/>
-                <h3>Frutas</h3>
-                <Radio options = {["Laranja", "Maçã", "Manga", "Jabuticaba"]} value={fruta} setValue={setFruta}/>
+                <h3>Ingredientes Churrasco</h3>
+                <Checkbox 
+                options={['Carne', 'Carvão', 'Sal Grosso', 'Vinagrete']} 
+                value={ingre} 
+                setValue={setIngre}
+                />
             </form>
          );
 }
