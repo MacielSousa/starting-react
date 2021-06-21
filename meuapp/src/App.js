@@ -1,10 +1,10 @@
 import React from 'react';
-import AppForm from './Hooks/HooksFormValidation/AppForm';
+import DesafioForm02 from './Formulario/Desafio/DesafioForm02';
 
 const App = () => {
     return (
         <>
-            <AppForm />
+            <DesafioForm02 />
         </>
     )
 }
