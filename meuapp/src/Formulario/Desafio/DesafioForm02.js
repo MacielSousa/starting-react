@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Input from '../FormComponentes/Input'
+import Radio from './Radio'
 const perguntas = [
     {
       pergunta: 'Qual método é utilizado para criar componentes?',
@@ -37,55 +37,53 @@ const perguntas = [
 
 const DesafioForm02 = () =>{
 
-    let resp = "";
-    let acertos = 0;
-    const [resposta, setResposta] = useState([]);
-    const [questao, setQuestao] = useState(0);
+  const [respostas, setRespostas] = React.useState({
+    p1: '',
+    p2: '',
+    p3: '',
+    p4: '',
+  });
 
-    function handleChange({target}){
-      resp = target.value;
-    }
+  const [slide, setSlide] = React.useState(0);
+  const [resultados, setResultados] = React.useState(null);
 
-    function pontos(){
-      perguntas.forEach((pergunta, index) => {
-        console.log('Perguntar: '+pergunta.resposta, 'Index: '+index);
-        if(pergunta.resposta === resposta[index]){
-          acertos = acertos + 1;
-        }
-      });
-    }
+  function handleChange({target}) {
+    setRespostas({...respostas, [target.id]: target.value})
+  }
 
-    function handleSubmit(event){
-      event.preventDefault();
-      if(resposta.length === 0){
-        setResposta([resp]);
-      }else{
-       setResposta([...resposta, resp])
-      }
-      let cont = questao+1;
-      setQuestao(cont);
-      event.target.reset()
+  function resultadoFinal() {
+    console.log('Final')
+    const corretas = perguntas.filter(({resposta , id}) => resposta === respostas[id]);
+    setResultados(`Você acertou: ${corretas.length} de ${perguntas.length}`)
+    console.log('Corretas: ', corretas);
+  }
+
+  function handleProximoSlide(){
+    if(slide < perguntas.length - 1){
+      setSlide(slide + 1);
+    }else{
+      setSlide(slide + 1);
+      resultadoFinal()
     }
-    
-    return (
-    <>
-    {questao < perguntas.length ?
-        <form onSubmit={handleSubmit}>
-          <fieldset>
-              <legend>{perguntas[questao].pergunta}</legend>
-              {perguntas[questao].options.map((op) => <div>
-                  <Input type="radio" id="produto" label={op} value={op} onChange={handleChange}/>
-              </div>)}
-          </fieldset>
-          <button style={{marginTop: "10px"}}>Avançar</button>
-        </form>
-     :
-     <>
-      {pontos()}
-      <p>Você Acertou: {acertos}</p>
-     </>
-    }
-    </>
-    )
+  }
+
+    return <form onSubmit={(event) => event.preventDefault()}>
+      {perguntas.map((pergunta, index) => (
+        <Radio 
+          active={slide === index}
+          key={pergunta.id} 
+          value={respostas[pergunta.id]} 
+          onChange={handleChange} 
+          {...pergunta}
+        />
+      ))}
+      {resultados 
+        ? 
+        <p>{resultados}</p> 
+        : 
+        <button style={{marginTop: "10px"}} onClick={handleProximoSlide}>Próximo</button>
+       }
+      
+    </form>
 }
 export default DesafioForm02;
