@@ -1,8 +1,8 @@
 import React from 'react';
-import Boots from "./TrabalhandoCSS/ExemploBootstrap/Boots"
+import Animation from "./TrabalhandoCSS/Animacao/Animation"
 
 const App = () => {
-    return <Boots />
+    return <Animation />
 }
 
 export default App;
