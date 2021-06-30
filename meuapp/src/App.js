@@ -1,8 +1,8 @@
 import React from 'react';
-import Animation from "./TrabalhandoCSS/Animacao/Animation"
+import AppSlide from "./TrabalhandoCSS/ProjetoCSS/AppSlide"
 
 const App = () => {
-    return <Animation />
+    return <AppSlide />
 }
 
 export default App;
