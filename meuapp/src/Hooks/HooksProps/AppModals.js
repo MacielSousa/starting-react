@@ -17,7 +17,6 @@ const App = () => {
             <button onClick={handlerClick}>Clicar</button>
             <Modal modal={modal} setModal={setModal} />
             <ButtonModal setModal={setModal}/>
-
         </div>
     );
     

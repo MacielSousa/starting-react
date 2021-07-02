@@ -1,8 +1,8 @@
 import React from 'react';
-import AppSlide from "./TrabalhandoCSS/ProjetoCSS/AppSlide"
+import AppImage from "./TrabalhandoCSS/Imagens/AppImage";
 
 const App = () => {
-    return <AppSlide />
+    return <AppImage />
 }
 
 export default App;
